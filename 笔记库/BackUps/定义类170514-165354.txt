@@ -1,0 +1,30 @@
+1、在类中定义的（不是在方法中定义的变量）所有实例都是可以访问的
+
+2、方法访问类中的变量一定要使用全类名的形式（类名.属性）
+
+3、类实力话之后还可以添加属性，删除属性等操作
+
+4、init中使用self添加的参数是实例化添加的参数，没有实例化不能删除等操作
+
+5、getattr(class,attribute,如果没有值就返回这里的)
+
+6、属性获得的函数
+The getattr(obj, name[, default]) : to access the attribute of object.
+The hasattr(obj,name) : to check if an attribute exists or not.
+The setattr(obj,name,value) : to set an attribute. If attribute does not exist,
+then it would be created.
+The delattr(obj, name) : to delete an attribu
+
+6、内建的函数调用时不能使用实例化了得函数
+__dict__: Dictionary containing the class's namespace.
+__doc__: Class documentation string or none, if undefined.
+ __name__: Class name.
+__module__: Module name in which the class is defined. This attribute is
+                      "__main__" in interactive mode.
+__bases__: A possibly empty tuple containing the base classes, in the order
+of their occurrence in the base class list.
+
+
+引用__del__()方法能够销毁类对象（自己在类中可以定义（调取）然后再外面调用此方法）；
+他能在删除类的时候启动，能释放所有的资源，而不是暂时放在内存中等垃圾回收自动回收
+

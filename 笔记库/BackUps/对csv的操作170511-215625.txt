@@ -1,0 +1,17 @@
+#encoding:utf-8
+import pandas as pd
+brics=pd.read_csv("D:/brics.csv",index_col=0)#后面的参数是解决行标在列的问题
+print brics
+#对列的操作
+#获取(2中方法)
+print brics["country"]
+print brics.country
+#列的添加(新添加的只能使用数组的形式)
+brics["dentity"]=brics.population/brics.area*10000
+print brics
+#获取行由于使用中括号无法知道是列还是行（获取的还是以列展示）
+print brics.loc["BR"]
+#元素的获取同时指定行标和列表(第二种必须是列表在前)
+print brics.loc["CH","capital"]
+print brics.capital.loc["CH"]
+print brics.loc["CH"]["capital"]

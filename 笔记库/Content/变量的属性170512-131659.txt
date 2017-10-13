@@ -1,0 +1,12 @@
+1、赋值
+a,b,c=1,2,"2"
+
+a=b=c=1
+
+2、操作
+print“aff”*2是重复两次
+str=“12345”
+print str[0]#第一个字符
+print str[2:5]
+print str[2:]
+str+"fafa"字符的连接操作

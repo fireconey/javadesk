@@ -1,0 +1,16 @@
+file.seek(偏移量，开始的位置)
+
+file.writelines(sequence) squence 可以是字符串可以是列表
+
+truncate缩短
+
+
+如果file路径的定位修改了就会自动的关闭先前的文件
+
+python一般在关闭文件时自动的刷新IO口
+
+seeK（）如果file是以a+ ，a打开的那么在下次write前他是不工作的。不是所有的文件都可以使用seek（）的。如果使用t模式打开的只能使用tell（）返回到以前位置才是合法的
+
+file.truncate([size])默认是从当前位置截断的
+
+file打开的文件只有acsII 和gbk的、utf-8编码的文件可以读取

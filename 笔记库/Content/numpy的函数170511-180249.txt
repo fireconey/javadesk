@@ -1,0 +1,11 @@
+np.mean(数据)是姘居·平均数
+
+np.median(数据)是中位数
+
+np.corroef(数据1，数据2)是否有相关性
+
+np.std(数据)是标准差
+
+np.sum()
+
+np.sort()

@@ -1,0 +1,20 @@
+
+cmp（list1，list2）如果全是数字，那么比较数字，如果list1一个位置是数字，list2对应位置为非数字，那么list2大。如果两个全为字母，那么按字母顺序
+
+list（sequence） 可以让元组变成列表
+
+max（list）会找到list中最大的
+min（list）会找到list中最小的
+
+list.count(object)会在list中找打object到底出现多少次
+
+list。extend（seq）list后面连接seq
+
+list.index(obj)  在list中找到obj并返回线表
+
+list。insert（index，obj）在index的位置插入obj
+
+lst。pop（int）默认会弹出后面的元素，指定了数的话会从后面开始数对应位置的数弹出
+
+list。reverse（）反向，颠倒
+list。insert（index，obj） 在index位置插入obj，如果index位置有元素那么此元素后退

@@ -1,0 +1,2 @@
+1、安装codeformater插件
+2、在packageset中的codeformter快捷绑定中设置绑定

@@ -1,0 +1,5 @@
+
+assert  表达式，出错时显示的可以有很多
+例题：
+#encoding:#utf-8
+assert  1==2,"f"

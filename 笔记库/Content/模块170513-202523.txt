@@ -1,0 +1,22 @@
+ 所有的包要放在  \python2.7\Lib\site-packages下，同时包中要有_ _init_ _.py文件
+
+import 导入的是一个文件夹的名称也可以是一个文件的名称，如果是一个文件夹那么里面有很多的文件所以要使用from module import filename形式来导入
+同时文件夹中必须有__init__.py文件否则不行
+
+from 文件夹名称.文件夹名称（就是模块了） import 文件名称
+
+
+如果你要使用from 模块 import *语句那么你要在_ _init_ _.py中写入所有的模块（使用imort  或 from  import）
+
+一般python会在搜寻与调用函数在一起的包，如果没有的话就搜寻python路径（在windows中设定PYTHONPATH=”C：\python2.7\lib",unix中卫PYTHONPATH=/usr/local/lib/python）。如果还没有就检查python自己设定的路径*********************
+
+如果在函数中定义一个局部变量的名称和外部的变量名称一样如果直接给他赋值这个同名变量就会出错，因为一般情况重名时都是优先使用局部变量，而这时局部变量没有值，那么给他自己赋值就会出错，可以在前面指定要赋的值是全局变量（global  mony）然后再操作
+
+
+from module import  导入的是后面的而不是模块所以使用dir（module）不能打印出信息，导入啥就dir啥
+
+from module1。module2 import 是在模块1中找模块2中的东西
+
+
+globals（）返回字典形式的所有全局变量  后面接.keys()得到key
+locals（）返回字典形式的局部变量

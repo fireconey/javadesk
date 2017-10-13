@@ -1,0 +1,44 @@
+1、ji.py
+#encoding:utf-8
+from flask import Flask,render_template
+app=Flask(__name__)
+@app.route("/")#开启路由
+def helloe_world():
+	#return "helo " 在这可以直接显示了
+	return render_template("index.html",title="<h1>hello world</h1>")#flask默然搜索的路径为templates下的文件
+	#第二个参数是输入到html中的参数，可以在html文件中取得。
+@app.route("/service")#和java的congtroller一样的通过注释找到下面的对应的函数
+def service():        # 一个注释只能绑定一个函数
+	return "services"
+@app.route("/about")
+def  about():
+	return 'about'
+
+if __name__=="__main__":
+	app.run(debug=True)
+
+
+2、st.css
+body{color:#efefef;}
+
+3、index.html
+<html>
+    <head>
+    <link rel="stylesheet" href="{{url_for('static',filename='st.css')}}">
+    <!--第一个参数是现对路径，第二个参数是文件名称-->
+        <title>
+            th
+        </title>
+        <body>
+            {{title}}
+            <nav>
+                <a href="{{url_for('.service')}}"><!--映射的路径-->
+                    service
+                </a>
+                <a href="{{url_for('.about')}}">
+                    about
+                </a>
+            </nav>
+        </body>
+    </head>
+</html>

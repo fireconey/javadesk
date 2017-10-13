@@ -1,0 +1,19 @@
+在类开头定义的属性要在函数中引用必须使用    类名.属性名   或self.属性名
+class person:
+	name="th"
+	def __init__(self):
+		pass
+	def getname(self):
+		return self.name
+xiaoming=person()
+print(xiaoming.getname())#如果getname不使用括号表示返回一个函数的对象
+
+
+class person:
+	name="th"
+	def __init__(self):
+		pass
+	def getname(self):
+		return person.name
+xiaoming=person()
+print(xiaoming.getname())  #如果getname不使用括号表示返回一个函数的对象

@@ -1,0 +1,13 @@
+import pandas as pd
+import numpy as np
+import statsmodels.api as sm
+from matplotlib.pylab import *
+import statsmodels.tsa.stattools as ts;
+data=pd.DataFrame({"A":[1,2,3,4]})
+def dun(x):
+	print(x,"*")
+# 使用apply会每次传入一个数据，使用b=dun（数据）是把
+# 数据打包给他了，所以time得到很长的字符串，导致不能解析。
+# apply()括号中只要求函数的名称不要括号。
+op=data["A"].agg(dun)
+

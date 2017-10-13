@@ -1,0 +1,20 @@
+1、在python中使用match匹配方式如果正则开头指定了明确的字符那么要匹配的字符串开头要是这个字符，match不能搜索后面的。
+
+2、search能够搜索整个字符串的
+
+后面的falgs含义：
+      标志			描述
+re.S(DOTALL) 		使.匹配包括换行在内的所有字符
+re.I（IGNORECASE）	使匹配对大小写不敏感
+re.L（LOCALE）		做本地化识别（locale-aware)匹配，法语等
+re.M(MULTILINE)	多行匹配，影响^和$
+re.X(VERBOSE)		该标志通过给予更灵活的格式以便将正则表达式写得更易于理		解
+re.U		根据Unicode字符集解析字符，这个标志影响\w,\W,\b,\B
+
+
+替换表达式：
+re.sub(parttern,replace,string ,【max=0】)后面的max表示是否全部都替换了（直接写数字）
+
+点号允许匹配任何字符，但只限于一行使用后面的flags能够解决这个问题
+
+[....]匹配括号中的任何字符，[^...]匹配不是括号中的字符

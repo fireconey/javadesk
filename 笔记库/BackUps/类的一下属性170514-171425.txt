@@ -1,0 +1,29 @@
+1、使用issubclass（sub，sup）来查看sub是否是sup的子类
+
+2、使用isinstance（objct，class）来查看object是否是class的实例化的子类
+
+3、调用类的init方法可以使用className（）、调用__del__方法可以使用del XX、调用热怕热可以使用repr（object）方法，调用str方法可以使用str（objct）方法、调用cmp方法可以使用
+cmp（object，X）方法
+
+
+4、str（）方法是给人看的，repr（）是给机器看的（包含了一些机器代码）
+1
+init__ ( self [,args...] )
+Constructor (with any optional arguments)
+Sample Call : obj = className(args)
+2
+__del__( self )
+Destructor, deletes an object
+Sample Call : del obj
+3
+__repr__( self )
+Evaluatable string representation
+Sample Call : repr(obj)
+4
+__str__( self )
+Printable string representation
+Sample Call : str(obj)
+5
+__cmp__ ( self, x )
+Object comparison
+Sample Call : cmp(obj, x)

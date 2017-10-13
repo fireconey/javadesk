@@ -1,0 +1,17 @@
+class person:
+	name="th"
+	def __init__(self):
+		ji=3
+	def getname(self):
+		return person.name
+
+class anima(person):
+	def __init__(self):
+		ji=4  
+	def huo(self):
+		ji=1  #这里是函数自己定义的属性，如果要访问init和开头属性要使用self
+		return ji
+xiaoming=anima()
+print(xiaoming.huo())  #如果使用xiaoming.huo（）.ji或者xiaoming.huo.ji都不行
+
+		

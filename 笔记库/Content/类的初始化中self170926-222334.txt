@@ -1,0 +1,16 @@
+如果类中有self，初始化后就不算一个要传入的参数，如果没有初始化（类名（））直接使用
+类名这self看成为一个普通的参数，要传入数据
+
+
+class person:
+	def ui(self,u):
+		self.name=u
+		return name
+	def ji():
+		return person.ui().name
+
+p=person
+print(p.ui(1,2))  #传入一个就会报错
+
+p1=person()
+print(p1.ui(2))#由于已经初始化了，就不会报错

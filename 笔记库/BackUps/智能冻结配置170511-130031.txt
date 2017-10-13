@@ -1,0 +1,5 @@
+在当前的工程的terminal输入pip 
+pip freeze>文件名称（然后就在工程中了）
+
+
+

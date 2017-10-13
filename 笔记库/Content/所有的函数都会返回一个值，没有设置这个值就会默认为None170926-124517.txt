@@ -1,0 +1,5 @@
+def  j(x):
+       pass
+
+def j(x):
+      return x

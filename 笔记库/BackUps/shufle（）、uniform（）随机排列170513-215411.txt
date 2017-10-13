@@ -1,0 +1,12 @@
+	math包
+
+shuffle（）随机排列 就是输入一个list 之后打印list则list中的排序是乱的-------调用一次排列依次，每次运行是一样的
+
+uniform（X，Y）随机取x到y的数据
+
+choice（seq） 在seq中随机抽一个数
+randrange（开始，结束，步长）在开始和结束中随机给一个数
+
+random（）0到1的随机数
+seed（X）X可有可无，以x为基准随机给个数
+

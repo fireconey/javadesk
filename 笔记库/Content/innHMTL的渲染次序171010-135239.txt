@@ -1,0 +1,16 @@
+ 
+/*
+innerHMTL是要等所有程序完成后
+一次性渲染，所以两个innerHTML
+中间有其他程序时不会先渲染第一个
+而是到最后一个innerHTML时才渲染；
+但是再次定位元素就会使其先渲染
+后面的再次渲染
+*/
+
+
+ bof=document.getElementById("div1")
+ bof.innerHTML="fdfa"
+setTimeout(5000)
+alert(0)
+  bof.innerHTML="11111"

@@ -1,0 +1,12 @@
+<div>
+  <p>fafaf</p>
+  <p>flolo</p>
+</div>
+
+
+获取div中的子节点ie为2
+个，其他浏览器为5个，是因为<div><p>等等之间的空白都算进去了。
+
+
+var box=document。getElementById（）；
+alert（box.childNodes）

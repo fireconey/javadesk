@@ -1,0 +1,52 @@
+1、ji.py
+#encoding:utf-8
+from flask import Flask,render_template,request,url_for,redirect
+from werkzeug.routing import BaseConverter
+from os import path
+import os
+import stat
+from werkzeug.utils import secure_filename
+app=Flask(__name__)
+@app.route("/")#开启路由
+def helloe_world():
+	return "helo " #在这可以直接显示了
+# 	return render_template("index.html",title="<h1>hello world</h1>")#flask默然搜索的路径为templates下的文件
+# 	#第二个参数是输入到html中的参数，可以在html文件中取得。
+
+@app.route("/upload",methods=["get","post"])
+def upload():
+	if request.method=="POST":
+		f=request.files["file"]
+		basepath=path.abspath(path.dirname(__file__))
+		upload_path=path.join(basepath,"static/ji")
+		f.save(path.join(upload_path,f.filename))
+ 		return redirect(url_for("upload"))
+ 	return render_template("upload.html")
+
+	
+
+if __name__=="__main__":
+	app.run(debug=True)
+
+2.upload.html
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+        </title>
+    </head>
+    <body>
+        <h1>
+            
+        </h1>
+        <form method="post" action="/loging" enctype="multipart/form-data">
+           
+                <input name="username" placeholder="username" type="text">
+                </input>
+                <input name="password" placeholder="password" type="password">
+                </input>
+                <input type="submit" name="提交">
+        </form>
+    </body>
+</html>

@@ -1,0 +1,2 @@
+segmentdf23=segmentdf[~(segmentdf.segment.isin(stopwords.stopword))]
+中不能去除换行符所以要先提出使用replace（“\r\n”,"  "）

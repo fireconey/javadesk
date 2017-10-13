@@ -1,0 +1,17 @@
+在实例化之后直接使用实例对象就是调用call方法，不再使用对象名.函数名的形式
+
+只要使用函数名（参数)的方法就会自动调用call方法，你可以在call方法中引用其他函数
+
+这样的好处就是对象像定义的一个简单函数一样的调用。class Person(object):
+    def __init__(self, name, gender):
+        self.name = name
+        self.gender = gender
+
+    def __call__(self,friend,ji):
+        print ('My name is %s...' % self.name)
+        print ('My friend is %s...' % friend)
+
+
+p=Person(1, 2)
+
+print(p(1,3))

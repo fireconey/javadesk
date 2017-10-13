@@ -1,0 +1,23 @@
+1、在python中有内建的头tostring函数就是__str__(self)不过在这里其要返回你想要的表达式
+      如果想直接打印类返回的信息可以return str（）或重写__str__()函数
+   其实print就是操作str函数**********************
+
+2、重写__add__(self,other)函数能够处理二维向量的加减。
+     
+如果重写了内建的方法直接使用此方法时只会调用此方法不会调用里面的任何方法包括其他内建的方法。所以要重新调用一次此类如：
+
+class Vector:
+	def __init__(self, a, b):
+		self.a = a
+		self.b = b
+	def __str__(self):
+		return 'Vector (%s, %s)' % (self.a, self.b)
+	
+	def __add__(self,oth):
+		print "fa222"
+		return Vector(1,2)
+	def __sub__(self,oth):
+	    return str(self.a-oth.a)
+v1 = Vector(2,10)
+v2 = Vector(5,-2)
+print v1-v2 #他只会调用一次__sub__方法不会调用str和init方法。所以在__sub__中调用了类（要使用return方法上抛，因为虽然str上抛了返回值，但是上抛在了__sub__函数中他没有给外部函数这个值，所以就不会打印出任何东西）

@@ -1,0 +1,5 @@
+
+************
+li=[["hu",1],["yu",2]]
+for name,i in li:
+	print name,i

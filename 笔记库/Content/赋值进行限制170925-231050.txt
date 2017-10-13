@@ -1,0 +1,16 @@
+类可以使用set_类名来赋值
+但是使用时只能使用它来进行限制的赋值
+可以使用装饰器泪指定直接使用等号赋值
+
+class Student(object):
+    def __init__(self, name, score):
+        self.name = name
+        self.__score = score
+    @property
+    def score(self):
+        return self.__score
+    @score.setter
+    def score(self, score):
+        if score < 0 or score > 100:
+            raise ValueError('invalid score')
+        self.__score = score

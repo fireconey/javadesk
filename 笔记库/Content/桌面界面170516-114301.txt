@@ -1,0 +1,113 @@
+1、button
+
+import Tkinter
+import tkMessageBox
+top=Tkinter.Tk()
+
+
+def hellocallback():
+	tkMessageBox.showinfo("hello world",b)
+b=Tkinter.Button(top,text="hellow",command=hellocallback)
+
+b.pack()
+top.mainloop()
+
+
+2、画布
+c=Tkinter.Canvas(top,bg="blue",height=250,width=300)#首先要创建画布然后使用其方法进行画画
+coord=0,0,10,240
+arc=c.create_arc(coord,start=0,extent=150,fill="red")
+
+3、checkbutton
+onvalue表示选上表示什么值0或1
+offvalue表示没有选上时表示什么值0或1.由于刚开始系统给的值是0，如果默认是选上的那么onvalue要是0.如果offvalue和onvalue一样的值就以onvalue值为准offvalue的值失效
+variabel表示从onvalue和offvalue接受到的值
+varriable=一般等于一个包装的类，以便于放在这个类中之后使用get方法去的他
+
+wraplength表示文字一行的宽度 width表示整个checkbutton的宽度
+
+state表示复选框时启用还是不启用
+
+relief是设定风格，是突起还是凹进去等
+
+font使用：font=("微软雅黑"，100)
+
+4、entry和java中的textfield差不多
+exportselection=0|1 表示选中文字时是否自动的放在剪贴板中
+
+如果想在框中输入的文字不可见可以设定show=“*”
+
+delet（start，【end】）删除输入框中的字符，如果后面的没有指定就删除start指定的一个字符
+
+5、如果所有的控件没有指定propagate（Flase）那么他会在使用pack（）时指定的宽度和大小都失效。
+
+
+6、滑动块
+from Tkinter import *
+Root=Tk()
+temp=StringVar()
+def on_move(value):#必须有参数因为scale中会自动的传参数
+	print "move-value:%s" %value#k可以使用temp.get()
+w=Scale(Root,label="value" ,variable=temp,from_=0,to=100,command=on_move\
+	,orient="horizontal")
+
+w.pack()
+
+Root.mainloop()
+
+7、滚动条
+from Tkinter import *
+Root=Tk()
+temp=StringVar()
+def on_move(value):
+	print "move-value:%s" %value
+w=Scrollbar(Root,orient="horizontal")
+w.pack()
+w.propagate(False)
+Root.mainloop()
+
+
+8、Text文本
+
+from Tkinter import *
+Root=Tk()
+temp=StringVar()
+def on_move(value):
+	print "move-value:%s" %value
+w=Text(Root)
+w.insert(1.0,"1211111111111111111111111111\n\n\n")#第一个参数表示在第几行第几列插入数据，初始情况下是没有行和列的只用在文本中添加了\n等符号才有行列之分
+w.insert(2.1,"faf22222222222221")
+w.pack()
+w.propagate(False)
+Root.mainloop()
+
+9、listbox
+selectmode：browse：只能选一行，按住鼠标拖到哪一行就选哪一行
+                        single：只能选一行不能拖拽
+                        mutiple:可以选多行，点击一次是选上，再点一次是不选
+                         extended：选中多行，也可以拖拽后选中多行
+
+from Tkinter import *
+Root=Tk()
+lb1=Listbox(Root,selectmode=EXTENDED)
+lb1.insert(1,"python")
+lb1.insert(2,"java")
+lb1.insert(3,"c")
+lb1.pack()
+Root.mainloop()
+
+#一下实例绑定了事件
+from Tkinter import *
+Root=Tk()
+
+lb1=Listbox(Root,selectmode=EXTENDED)
+lb1.insert(1,"python")
+lb1.insert(2,"java")
+lb1.insert(3,"c")
+def co(event):
+	for x in lb1.curselection():
+		print lb1.get(x)
+lb1.bind('<Double-Button-1>',co)
+
+lb1.pack()
+Root.mainloop()

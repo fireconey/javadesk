@@ -1,0 +1,19 @@
+1、html中{%with%}{%endwith%} 是代码块，表示只有在这里面是有效的
+{% with %}
+{% set liks={"label":"Home"}%}
+{% endwith %}
+{{ liks }}#加了代码块此处就不能显示了
+
+2、{{ 变量}}是可以直接显示在页面上的
+ 
+3、jinja的for循环
+{% set liks=[{"label":"Home","about":"aobut"},{"label":"Home","about":"aobut"}]%}
+<h1>{% for i in liks %}
+    <P>{{ i.label}}</P>
+    {% endfor %}
+4、对for循环的操作
+loop有许多功能
+{% for i in liks %}
+    {% if loop.index is odd %}<P>{{ i.label}}</P>{% endif %}
+
+    {% endfor %}

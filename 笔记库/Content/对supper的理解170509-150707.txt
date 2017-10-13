@@ -1,0 +1,6 @@
+class  a:
+       def j:
+       print "1“
+class b(a):
+      def p:
+      super(b,self).j() #先找到b的父类中有a把self指向父类a然后就能直接使用self.j()了

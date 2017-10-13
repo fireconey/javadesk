@@ -1,0 +1,8 @@
+
+  File "D:\SOF\python\lib\site-packages\PIL\ImageFont.py", line 156, in getsize
+    size, offset = self.font.getsize(text, direction, features)
+SystemError: <built-in method getsize of Font object at 0x000000E07DA8B850> returned NULL without setting an erro
+
+
+
+是由于 词组中有空的字符，plot无法决定其字体大小

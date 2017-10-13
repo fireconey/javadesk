@@ -1,0 +1,3 @@
+os。chmod（path，mode）表示只能自己都自己写等锁后面的mode有很多设置
+
+os。chown（path，uid，gid）表示更改路劲的uid（自己的）gid（团体的）有的版本没有这个功能

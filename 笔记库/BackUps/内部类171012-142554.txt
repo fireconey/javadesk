@@ -1,0 +1,47 @@
+function  t()
+{  
+	this.name=2
+           /*
+如果没有使用t则又由于没有var  表示全局函数
+相当于在外边定义的函数
+使用t.表示在t内部定义的函数
+*/
+	t.hu=function()
+	{   
+		this.name=1
+		this.g=function()
+		{
+			alert(this.name)
+		}
+			alert("t.hu")
+		
+	}
+	
+	this.r=function()
+	{
+		alert(this.name)
+	}
+	/*
+	类即使函数又是类，所以没有直接使用this
+    默认alert(33)编写的是函数的操作。可以直接使用 
+    */
+    alert(33)   
+}
+
+var hg=new t()
+var fr=new t.hu()
+	/*
+    没有new此时是函数操作 
+    不能调取内部的this声明的方法
+	*/
+t.hu()     /*是由于上面已经new t 所以能使用t.hu()---
+包装的函数只有在外包实例化之后才能调用*/
+
+
+fr.g()
+hg.r()
+
+
+
+
+

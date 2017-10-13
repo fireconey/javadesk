@@ -1,0 +1,7 @@
+var p=document.createlement("p") 只是添加到内存中还没有到浏览器中 
+document.getelementbyid().appendchild(p) 才能添加到浏览器。
+
+
+text=document.creattextnode("fafaf")  
+p.appendchild(text)
+document.getelementbyid().appendchild(p)  可以添加到文本

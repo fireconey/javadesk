@@ -1,0 +1,533 @@
+2、tkinter2
+import Tkinter as tk
+root=tk.Tk()
+textlabel=tk.Label(root ,text="你下载的影片未满十八岁不能观看\n\
+你是否满十八岁了",compound=tk.CENTER,justify=tk.LEFT,padx=10)
+photo=tk.PhotoImage(file="pi.gif")
+imagelabel=tk.Label(root,image=photo)
+imagelabel.pack(side=tk.LEFT)
+textlabel.pack(side=tk.LEFT)
+root.mainloop()
+
+3、tkinter2-2文字和图片混合
+import Tkinter as tk
+
+root=tk.Tk()
+photo=tk.PhotoImage(file="pi.gif")
+textlabel=tk.Label(root ,
+	text="你下载的影片未满十八岁不能观看\n\
+你是否满十八岁了",
+compound=tk.CENTER,
+justify=tk.LEFT,
+padx=10,
+image=photo,
+font=("微软雅黑",16))
+
+textlabel.pack(side=tk.LEFT)
+
+root.mainloop()
+
+4、tkinter2-3添加按钮
+from Tkinter import *
+
+root=Tk()
+fram1=Frame(root)
+fram2=Frame(root)
+var=StringVar()
+var.set("年满十八岁才能观看！")
+def callback():
+	var.set("吹吧！我才不信尼！")
+
+textlabel=Label(fram1,
+	textvariable=var,
+	justify=LEFT,
+	padx=10)
+textlabel.pack(side=LEFT)
+photo=PhotoImage(file="pi.gif",width=100,height=100)
+imaglabel=Label(fram1,image=photo,width=100,height=100)
+imaglabel.pack(side=RIGHT)
+thebutton=Button(fram2,text="我已满十八岁",command=callback)
+
+fram1.pack(padx=10,pady=10)
+fram2.pack(side=TOP,padx=10,pady=10)
+thebutton.pack()
+root.mainloop()
+
+
+5、tkinter 3-1  checkbox
+
+
+from Tkinter import *
+
+root=Tk()
+var=StringVar()
+list=["西施","貂蝉","王昭君","杨玉环"]
+v=[]
+for l in list:
+	v.append(IntVar())#每个button都给一个变量所以这里准备一些变量
+	b=Checkbutton(root,text=l,variable=v[-1])#由于v是不断的增加每次最后一个给他所以是-1
+	b.pack(anchor=W)
+
+root.mainloop()
+
+6、tkinter 3-2  radiobutton
+
+from Tkinter import *
+
+root=Tk()
+laf=LabelFrame(root,text="最好的语言是python",padx=10,pady=10,width=200,height=300)
+# laf.propagate(False)
+laf.pack(padx=10,pady=10)
+var=StringVar()
+list=["西施","貂蝉","王昭君","杨玉环"]
+v=IntVar()
+i=1
+for l in list:
+	#同个变量表示只能选一个，如果给了多个边个两·变量表示可以选多个。
+	b=Radiobutton(laf,text=l,variable=v,value=i,#后面有value的好处就是检查value是否和前面的变量相同不同就改变选项。
+	indicatoron=False,#去掉前面的小圈
+	
+
+	)
+	print i
+	b.pack(fill=X)  #横向填充
+	i=i+1
+
+root.mainloop()
+
+
+7、tkinter4-1  grid布局
+
+
+from Tkinter import *
+import sys
+
+root=Tk()
+label=Label(root ,text="作品").grid(row=0,column=0)
+label2=Label(root,text="作者").grid(row=1,column=0)
+
+
+e1=Entry(root)
+e1.grid(row=0,column=1,padx=5)
+e2=Entry(root)
+e2.grid(row=1,column=1,padx=5)
+def show():
+	print "作品：u%s" %e1.get()
+	print "作者：u%s" %e2.get()
+
+
+button1=Button(root,text="获取信息",width=10,command=show).grid(row=2,column=0,sticky=W,padx=10,pady=5)
+button2=Button(root,text="退出",width=10,command=root.quit).grid(row=2,column=1,sticky=E,padx=10,pady=5)#quite相当的，quiet安静
+root.mainloop()
+
+
+8、tkinter4-2  验证
+
+
+from Tkinter import *
+import sys
+
+root=Tk()
+v=StringVar()
+def test():
+	if e1.get()=="xiaojiayu":#由于目前不支持中文所以这里验证不能使用中文
+		print "OK"
+		return True
+	else:
+		print "NO"
+		e1.delete(0,END)
+		return False
+e1=Entry(root ,textvariable=v,
+	validate="focusout",  #什么时候开启验证
+	 validatecommand=test) #使用什么方法验证如果前面的验证没有通过可以使用invalidatecommand进行再次验证
+e2=Entry(root)
+e1.pack(padx=10,pady=10)
+e2.pack(padx=10,pady=10)
+root.mainloop()
+
+9、tkinter5 listbox 和删除操作
+from Tkinter import *
+
+root=Tk()
+thelist=Listbox(root)
+thelist.pack()
+for i in ["鸡蛋","鸭蛋","鹅蛋","李狗蛋"]:
+	thelist.insert(END,i)  #添加
+def  dl():
+	 thelist.delete(ACTIVE)
+bu=Button(root,text="删除",command=dl,selectmode=)#model表示模特，模型mode表示方法方式。module表示模块
+bu.pack()
+root.mainloop()
+
+
+10、tkinter5-2 滚动条
+ Tkinter import *
+root=Tk()
+sb=Scrollbar(root)
+sb.pack(side=RIGHT,fill=Y)
+lb=Listbox(root,yscrollcommand=sb.set)#联通scrollbar
+for i in range(199):
+	lb.insert(END,i)
+lb.pack(side=LEFT,fill=BOTH)
+sb.config(command=lb.yview)#由于每个相互的设置都要以对方存在为前提所以这里使用config设置
+root.mainloop()             #s上面一行是联通点字滚动后滚动条也滚动
+
+
+
+11、tkinter 5-3刻度条
+from Tkinter import *
+
+
+def show(self):
+	print self
+root=Tk()
+s=Scale(root ,from_=0,#from表示原本的意思，但是和包的导入有冲突
+ to=100,
+ orient=HORIZONTAL,command=show,#只要这个控件会变化都会传参数
+ tickinter=9, #就是显示的刻度
+ resolution=3,#就是每次移动固定移动多少，如果和上面的比下面的小（且不为倍数关系）就以下面的为主
+ length=600)
+s.pack(fill=BOTH)
+
+Button(root,text="获取位置",command=show).pack()
+
+root.mainloop()             
+
+
+12、TKinter6-1 text空间插入  button组件
+from Tkinter import *
+
+def show():
+	print "哟！我被点了一下"
+
+root=Tk()
+tet=Text(root,width=30,height=10)
+tet.pack()
+tet.insert(INSERT,"i love you\n")#insert表示在光标处插入
+tet.insert(END,"ths")
+#还可以插入按钮
+bu=Button(tet,text="button",command=show)
+#如果不单独为其开辟一个窗口就会只显示一个
+tet.window_create(INSERT,window=bu)
+root.mainloop()             
+
+
+
+13、TKinter6-2 插入图片
+rom Tkinter import *
+
+root=Tk()
+tet=Text(root,width=100,height=100)
+tet.pack()
+
+
+poth=PhotoImage(file="pi.gif")
+
+def show():
+	tet.image_create(END,image=poth)
+	
+
+#还可以插入按钮
+bu=Button(tet,text="button",command=show)
+#如果不单独为其开辟一个窗口就会只显示一个
+tet.window_create(INSERT,window=bu)
+root.mainloop()             
+
+*********************************************************************************
+text.get(1.0)表示获取第一行第一列。但是必须有行，有列（\n）
+test.get(1.0,   2.END)表示的是一个范围1行0列到2行的末尾
+
+
+
+14、tkinter6-3  
+text.mark_set("here",1.2)表示在1行2列处标记为here
+然后就可以使用insert了("here",1234）插入后mark位置会改变（后移）如果使其不动要使用
+text。mark_gravity("here",LEFT)表示mark不动了，左边插入，后mark定位到原来的位置。
+
+删除mark mark_unset("here")
+
+15、tkinter7  tag标签
+from Tkinter import *
+import webbrowser
+
+root=Tk()
+tet=Text(root,width=23,height=10)
+tet.pack()
+tet.insert(INSERT,"I love you andyou?")
+tet.tag_add("tag1",1.7,1.13,1.14)
+#两个tag在同一位置后面的覆盖前面的
+tet.tag_config("tag1",background="yellow" ,foreground="red")#可以在这里配置很多样式
+#使用text.tag_lower("fff")可以降低优先级
+#使用taxt.insert(INSERT,"i love you",("tag1","tag2"))来指定优先级
+def show_arrow_cursor(ev):
+	tet.config(cursor="arrow")
+
+def show_xtern_cursor(ev):
+	tet.config(cursor="xterm")
+
+def click(ev):
+	webbrowser.open("http://www.baidu.com")
+
+tet.tag_bind("tag1","<Enter>",show_arrow_cursor)
+tet.tag_bind("tag1","<Leave>",show_xtern_cursor)
+tet.tag_bind("tag1","<Button>",click)
+root.mainloop()        
+
+
+16、tkinter7 -1 md5加密检查
+     
+from Tkinter import *
+import hashlib
+root=Tk()
+tet=Text(root,width=23,height=10)
+tet.pack()
+tet.insert(INSERT,"i love you fish")
+contents=tet.get("1.0",END)#文本获得要指定位置
+
+def getsig(contents):
+	m=hashlib.md5(contents.encode())#使用了md5加密验证方法确保一定是这个内容
+	return m.digest()
+
+sig=getsig(contents)	
+
+def check():
+	ontents=tet.get("1.0",END)
+	if sig!=getsig(ontents):
+		print("警告内容发生改变")
+	else:
+		print "风品浪尽"
+Button(root,text="检查",command=check).pack()
+
+root.mainloop()             
+
+17、tkinter7-2  取消操作
+开始位置如1.0+1c表示1.1
+tet=Text(root,width=23,height=10,undo=True)设置为true之后就能撤销操作了。
+
+from Tkinter import *
+import hashlib
+root=Tk()
+tet=Text(root,width=23,height=10,undo=True,autoseparators=True)#不是自动的放置分隔符
+tet.pack()
+def callback(envee):
+	tet.edit_separator() #插入分割符
+tet.bind("<Key>",callback)#每次输入时进行检测
+root.mainloop()             
+
+18、tkinter8   canvas
+
+from Tkinter import *
+
+root=Tk()
+w=Canvas(root ,width=300,height=300,bg="gray")
+w.pack()
+line1=w.create_line(0,50,200,50,fill="red",dash=(255,255))
+
+w.coords(line1,0,25,300,50)#移动到一个新的位置
+w.itemconfig(line1,fill="blue")#设置样式的
+# w.delete(line1)#删除可以使用ALL参数
+w.create_text(100,50,text="easy" ,anchor=W)#创建文字可以使用列表直接输入
+w.create_oval(40,40,200,200,fill="red",dash=(255,255),outline="red"))#创建圆
+th=[0,0,100,100]
+w.create_line(th,fill="red")#可以使用列表
+root.mainloop()             
+
+19、tkinter9 canvas画板
+
+
+from Tkinter import *
+
+root=Tk()
+w=Canvas(root ,width=300,height=300,bg="gray")
+w.pack()
+def paint(event):
+	x1,y1=(event.x-1),(event.y-1)
+	x2,y2=(event.x+2),(event.y+2)
+	w.create_oval(x1,y1,x2,y2,fill="blue")
+w.bind("<B1-Motion>",paint)
+Label(root,text="按下鼠标").pack()
+root.mainloop()             
+
+20、tkinter10 菜单
+from Tkinter import *
+
+root=Tk()
+def callback():
+	print "你好！"
+menubar=Menu(root)
+filename=Menu(menubar )
+filename.add_command(label="打开" ,command=callback,tearof=True)#后面的表示点击顶部的横线能够bar能够独立出来
+filename.add_command(label="保存", command=root.quit)
+filename.add_separator()#插入横线
+filename.add_command(label="退出" ,command=callback)
+
+menubar.add_cascade(label="文件",menu=filename)
+root.config(menu=menubar)
+root.mainloop()             
+
+21、tkinter10-1使用了复选框和单选框的菜单栏
+rom Tkinter import *
+
+root=Tk()
+def callback():
+	print "你好！"
+menubar=Menu(root)
+filename=Menu(menubar )
+filename.add_command(label="打开" ,command=callback)
+filename.add_command(label="保存", command=root.quit)
+
+openvar=IntVar()
+save=IntVar()
+
+filename.add_checkbutton(label="打开" ,variable=openvar,command=callback)  #使用了复选框
+filename.add_checkbutton(label="保存", variable=save,command=callback)#使用了复选框
+
+li=IntVar()
+filename.add_radiobutton(label="打开" ,variable=li,command=callback,value=1)  #使用了复选框
+filename.add_radiobutton(label="保存", variable=li,command=callback,value=2)#使用了复选框
+menubar.add_cascade(label="fa",menu=filename)
+root.config(menu=menubar)
+root.mainloop()             
+
+22、tkinter10-2使用老的menubutton
+
+from Tkinter import *
+
+root=Tk()
+def callback():
+	print "你好！"
+menubutton=Menubutton(root,text="点我",relief=RAISED)
+menubutton.pack()
+
+filename=Menu(menubutton )
+filename.add_command(label="打开" ,command=callback)
+filename.add_command(label="保存", command=root.quit)
+
+openvar=IntVar()
+save=IntVar()
+
+filename.add_checkbutton(label="打开" ,variable=openvar,command=callback)  #使用了复选框
+filename.add_checkbutton(label="保存", variable=save,command=callback)#使用了复选框
+
+li=IntVar()
+filename.add_radiobutton(label="打开" ,variable=li,command=callback,value=1)  #使用了复选框
+filename.add_radiobutton(label="保存", variable=li,command=callback,value=2)#使用了复选框
+menubutton.config(menu=filename)
+root.mainloop()             
+
+
+22、tkinter10-3使用老的OptionMenu（）
+
+from Tkinter import *
+
+root=Tk()
+var=StringVar()
+var.set("one")
+w=OptionMenu(root,var,"one","two","three")
+w.pack()
+root.mainloop()      
+
+
+23、tkinter11 事件的绑定
+
+from Tkinter import *
+
+root=Tk()
+def callback(event):
+	print "d",event.x,event.y
+frame=Frame(root,width=200,height=200)
+frame.bind("<Button-1>",callback)#button1是左键2是中建3是右键
+frame.bind("<Key>",callback)#使用键盘
+frame.focus_set()#要有焦点键盘才有用
+frame.bind("<Motion>",callback)#表示进入框中就会触发
+frame.pack()#KeyPress-H表示点击键盘的H键，组合键使用Control-Shift-KeyPress-H
+root.mainloop()            #event.keysym能够显示你按的那个键
+
+
+
+24、tkinter12 -1
+from Tkinter import *
+root=Tk()
+#能够自动换行
+m=Message(root,text="这时一则消防腐剂快了快了快了快了kl；息",width=100)
+m.pack()
+w=Spinbox(root ,from_=0,to=10,wrap=True)#后面的表示能够循环
+w.pack()
+w1=Spinbox(root ,values=["小甲鱼","田华"],wrap=True)#后面的表示能够循环
+w1.pack()
+p=PanedWindow(root,orient=VERTICAL)  #分界线可以拉动
+p.pack(fill=BOTH,expand=1)
+top=Label(p,text="faht")
+p.add(top)
+bottom=Label(p,text="fa")
+p.add(bottom)
+p1=PanedWindow(root,showhandle=True,sashrelief=SUNKEN)  #分界线可以拉动
+p1.pack(fill=BOTH,expand=1)
+lef=Label(p1,text="faht")
+p1.add(lef)
+p2=PanedWindow(orient=VERTICAL,showhandle=True,sashrelief=SUNKEN)  #分界线可以拉动
+p1.add(p2)  #三分格这里是关键
+top=Label(p2,text="fa")
+p2.add(top)
+bottom=Label(p2,text="fa")
+p2.add(bottom)
+root.mainloop()             
+
+25、tkinter12 -2  顶级窗口
+from Tkinter import *
+
+root=Tk()
+def create():
+	top=Toplevel()
+	top.title("小鱼")
+	msg=Message(top,text="i love you")
+	msg.pack()
+
+Button(root,text="创建顶级窗口",command=create).pack()
+
+root.mainloop()             
+
+26、布局
+不要再同一个父容器中同时使用pack，grid会冲突
+pack（side=LEFT）表示横向填充
+
+grid（row=，column=）
+place（relx=，rely=，relheight，rewidth）相对应父组件0-1
+
+27、标准对话框
+from Tkinter import *
+import tkMessageBox as mb
+
+mb.askokcancel("th","OK")
+mb.showerro("tj","ok")
+mb.showinfo()
+
+
+28.dialog
+import tkinter.filedialog
+from tkinter import *
+root = Tk()
+
+def callback():
+     fileName = filedialog.askopenfilename()
+     print(fileName)
+Button(root,text='打开文本',command=callback).pack()
+mainloop()
+
+
+29、colorchoose
+
+import tkinter.colorchooser
+from tkinter import *
+
+root = Tk()
+
+def callback():
+     fileName = colorchooser.askcolor()
+     print(fileName)
+
+Button(root,text="选择颜色",command=callback).pack()
+mainloop()
+
+    
+

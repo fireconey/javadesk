@@ -1,0 +1,13 @@
+以下都要指定id才能正常显示
+
+<input type="week" name="" id=""> 可以有日期选择
+<input type="color" name="" id="ji"/>  可以有颜色
+<input type="number" name="" id="f"> 可以有数字
+<input type="month" name="" id="2">
+          <input type="time" name="" id="">
+          <input type="datetime" name="g" id="g">
+          <input type="date" name="" id="fa">
+          <input type="datetime-local" name="f" id="faf">
+          <input type="checkbox" name="f" id="">ffafa</input>
+          <input type="radio" name="faf" id="fa">
+          <input type="range" name="" id="">滑动条

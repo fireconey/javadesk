@@ -1,0 +1,5 @@
+在body之外添加的元素都会自动的放在body中
+
+加载js 不能使用innerHTML
+
+使用createElement

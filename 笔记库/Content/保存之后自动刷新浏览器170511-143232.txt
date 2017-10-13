@@ -1,0 +1,8 @@
+manager=Manager(app)
+@manager.command
+def dev():
+    from livereload import Server
+    liver=Server(app.wsgi_app)
+    liver.watch("**/*.*")#检测所有的文件
+    liver.serve(open_url=True)
+浏览器要插件

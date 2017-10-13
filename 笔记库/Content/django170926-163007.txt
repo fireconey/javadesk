@@ -1,0 +1,13 @@
+manage.py 表示命令操作的接口
+
+项目中的
+wsgi.py python服务器网管接口
+
+
+urls.py 配置页面的地址
+
+
+
+
+
+

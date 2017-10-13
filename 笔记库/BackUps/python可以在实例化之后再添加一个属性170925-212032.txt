@@ -1,0 +1,9 @@
+class person:
+	name="th"
+	def __init__(self):
+		pass
+	def getname(self):
+		return person.name
+xiaoming=person()
+xiaoming.age=1
+print(xiaoming.age)

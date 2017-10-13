@@ -1,0 +1,15 @@
+calender。month（year，month，w,l）表示的是指定年份和月份的日历
+
+日历
+import calendar
+cal = calendar.month(2008, 1)
+print "Here is the calendar:"
+print cal;
+
+calender。calender（年，w=宽度，l=长度，c=间隔）w是每个字的宽度。l是每行的行数，c是星期之间的间隔。每行宽度计算之后还要加18.
+
+calendar。monthcalendar（year,month）返回的是列表形式的不是本月的日期使用0填上
+
+calendar。monthrange（year，month） 返回的第一个数是这个月的第一天的星期数（使用da-6的代码表示），返回的第二个是这个月有多少天
+
+calendar。weekday（year，month，day）输入对应天的对应星期数（返回的是代码）

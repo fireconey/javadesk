@@ -1,0 +1,8 @@
+import pandas
+import numpy
+ar=pandas.DataFrame({"one":[1,2],"two":[5,4]})
+def handler(x):
+      return sum(x>0)
+ty=ar.apply(handler)
+
+每列相加。

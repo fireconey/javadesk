@@ -1,0 +1,15 @@
+insertAfter
+和InsertBefore都是在标签的开始添加的（没这insertAfter）
+
+如果要添加在结束后添加，则有下一个兄弟则在下一个兄弟前添加
+
+如果没有兄弟这在父标签后使用appen直接添加。
+
+
+insertbefore等倒要先指定父节点，
+
+如在 p前面添加东西
+要先指定在那一级的父节点（直接父节点）添加
+p.parentNode.insertBefore(XXX,p)
+
+XXX必须是节点，不能是字符

@@ -1,0 +1,30 @@
+str="title why"
+
+str.title()会把文字开头的都变成大写字母
+
+str.jion(sequence)#通过前面的str来连接后面的序列（可以是tuplte或string）
+str.ljust(宽度，填充的字符)#指定一定的宽度，填充字符的左边接str
+
+str.lstrip(" 字符") 去除右边的”字符“
+
+from string import maketrans  ****intab和outtab长度一定要相同
+s=maketrans（intab，outtab）
+str.translate(s)     在str中找到intab，然后使用outtab替换，然后指定转换开始
+
+str.split( , )第二个参数可以不指定。第一个参数是说使用那个进行分割，后一个参数是说分割几次
+
+max（str） 返回str中在字母顺序表中最大的字符******小写字母比大写字母靠后
+
+str。replace（old，new，3）第三个可以不指定。表示使用new替换old，替换3次
+
+str.find(""，，)从左边找  找到第一个就 返回的是下标
+str.rfing(""，，)从右边找 ，找到第一个就 返回下标
+
+
+str.rjust(13,"faf")指定宽度为13，不够的开头处开始填充faf后面接str
+
+str.rstrip("字符")右边的字符剪掉
+str.strip("字符")左右的包括字符的都剪掉
+str。splitlines（3）根据行来分割，可以指定分割次数
+
+str。swapcase（）字符转换（小的变大，大的便小）

@@ -1,0 +1,34 @@
+str.capitalize() 首字母大写
+
+str.center(in，”“)表示使str变成int长的字符串，如果本来str比int长就不做操作，如果小就两边使用字符进行填充
+
+str。count（sub，开始，结束）表示str中从开始数到结束的数总共包含多少个sub
+
+str.decode(编码格式，错误的处理方法)
+
+
+str.endswith（”i“，0，lenth） 0-lenth中是否以i结尾是的就是true，不是就false
+
+str.expandtabs（int） 修改tabs表示的空格数
+
+str.find("",0,lenth)表示在str中找到”“有就返回第一个的下标
+
+str.isalnum（）是否是纯字符或数字的
+
+isdigit()
+True: Unicode数字，byte数字（单字节），全角数字（双字节），罗马数字
+False: 汉字数字
+Error: 无
+
+isdecimal()
+True: Unicode数字，，全角数字（双字节）
+False: 罗马数字，汉字数字
+Error: byte数字（单字节）
+
+isnumeric()
+True: Unicode数字，全角数字（双字节），罗马数字，汉字数字
+False: 无
+Error: byte数字（单字节）
+
+
+istitle（）表示是否全部是大写

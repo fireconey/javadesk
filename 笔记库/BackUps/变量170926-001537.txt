@@ -1,0 +1,34 @@
+		python中的false true None等关键字开头都是大写
+
+1、var="i love chinal"
+print var[1:6]
+打印的是 love
+
+		列表操作：
+2、Python 表达式	结果	描述
+len([1, 2, 3])	3	长度
+[1, 2, 3] + [4, 5, 6]	[1, 2, 3, 4, 5, 6]	组合
+['Hi!'] * 4	['Hi!', 'Hi!', 'Hi!', 'Hi!']	重复
+3 in [1, 2, 3]	True	元素是否存在于列表中
+for x in [1, 2, 3]: print x,	1 2 3	迭代
+
+3、字典就是java中的map使用大括号；列表，元组，字典都使用【】作为下标引用
+
+4、python中is是判断地址的和==不同他是判断内容的这一点和java的相反。
+
+5、python中的false和true开头都要大写
+
+6、python中没有--和++
+
+7、列表中添加元素使用append
+
+8、匿名函数lambda 只能是一行同时要使用只能先赋给一个变量，且不能直接使用print输出lambd
+例如：sum=lambda ar1，ar2：ar1+ar2 
+
+9、python中的null是None
+
+10、from 模块名 import 模块的部分；form 模块名 import*是导入模块的所有；
+
+11、模块顶层代码可以使用reload()重新加载
+
+

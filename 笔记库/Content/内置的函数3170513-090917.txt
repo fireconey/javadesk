@@ -1,0 +1,12 @@
+from string import maketrans # Required to call maketrans function.
+intab = "aeiou"
+outtab = "12345"
+trantab = maketrans(intab, outtab)
+str = "this is string example....wow!!!";
+print str.translate(trantab, 'xm')    第一个参数是在str找到的使用12345来替换。后面的是删除str中找到的xm字符
+
+
+str.zfill(50) str不够50就在左边使用0000铺垫
+
+str.isdecimal()只能使用与unicode编码的，变成unicoding可以直接在前加u。此函数表示str中是否有十进制数
+

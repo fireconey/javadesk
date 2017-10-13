@@ -1,0 +1,4 @@
+#encoding:utf-8
+import pandas as pd
+brics=pd.read_csv("D:/brics.csv",index_col=0)#后面的参数是解决行标在列的问题
+print brics

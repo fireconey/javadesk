@@ -1,0 +1,40 @@
+断点 assert 表达式，出错时返回的提示。表达式通过了就不会报后面的错误
+
+try：
+  表达式
+except： （可以使用多个except，也可以在一行使用，好并列好多个异常）（可以后面接参数）
+  有异常就抛出
+else：
+ try通过了就执行这里
+finally：
+不论有没有通过都执行
+
+
+接受参数的异常
+def temp_convert(var):
+try:
+return int(var)
+except ValueError, Argument:
+print "The argument does not contain numbers\n", Argument
+# Call above function here.
+temp_convert("xyz");
+
+raise “要是已经定义的异常”：参数。后面的参数是发生异常后返回给异常捕捉器的字符串
+
+as是得到实例化的对象也可以使用，号分开来获取。
+
+
+定义自己的异常：**************************************************************
+要继承runtimeerror异常的类
+class tui(RuntimeError):
+           def __init__(self,*arg):#必须是有*否则输出的是一个一个的字母
+	self.args=arg  #如果要直接使用e输出就必须使用self.args=XXX(一个字都不		改)，要不只能在这里定义一个参数b然后*arg值给b，打印
+		e时使用e.b
+try:
+    raise tui,"fafa"#表示该tui类初始化的传递参数，也可以使用tui（“fa'fa'f）
+except Exception, e:# ,e表示实例化后给e
+         print e
+
+
+如果调用一个函数是出项不能not canable是因为你定义了一个变量和他重名*******************
+

@@ -1,0 +1,31 @@
+import time
+print time.time()
+print time.localtime(time.time()) #此打印的是tim_strute
+
+
+asctime()是把时间变成asc码的里面是时间结构的
+ctime（）是吧时间变成字符的，里面的必须是以秒计数的
+gmtime（）是把其中的参数（秒计数的）变成元组形式的展现出来（返回的是国际事件）
+和calendar。timegm（）相反
+
+mktime（）是使tuple格式的时间变成秒数
+localtime（）和gmtime一样只不过是本地的时间就是在国际时间上加了时间数
+
+日历
+import calendar
+cal = calendar.month(2008, 1)
+print "Here is the calendar:"
+print cal;
+
+calender。calender（年，w=宽度，l=长度，c=间隔）w是每个字的宽度。l是每行的行数，c是星期之间的间隔。每行宽度计算之后还要加18.
+
+
+time,clock()是计算机时间，能够用于计时程序的处理花费时间
+
+
+
+altzone（）返回夏令营时间的偏移量，如果你所在的时区在东边就返回负值
+
+time.timezone注意后面没有括号。返回距离国际时间的秒数
+
+time.tzname[0].decode('gbk')后面一个是编码。0是标准时间，1是夏令时间（都是本地的时间）

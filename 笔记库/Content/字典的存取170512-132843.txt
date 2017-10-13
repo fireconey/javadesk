@@ -1,0 +1,8 @@
+1、dict={}
+  dict["one"]="this is one"#存储
+   dict[1]=“this哦”
+#获取
+dict["one"]
+dict[1]   #1是键不是下标
+   
+  
